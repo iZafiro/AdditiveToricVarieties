@@ -223,30 +223,6 @@ listUniquelyAdditiveSmoothFanoToricVarieties ZZ := n -> (
     );
 );
 
-if false then (
-acount := 0;
-uacount := 0;
-maxindices := {4, 17, 123, 865, 7621};
-for n from 6 to 6 do (
-    acount = 0;
-    uacount = 0;
-    g := openOutAppend concatenate {"AdditiveToricVarieties/classifier-", toString n, ".csv"};
-    for i from 7607 to maxindices#(n-2) do (
-        result := additiveActions(fan smoothFanoToricVariety(n, i), fanIsComplete => true, fanIsSmooth => true);
-         g << concatenate {toExternalString i, ",", toExternalString result#"isAdditive", ",", toExternalString result#"completeCollection", ",", toExternalString result#"isUniquelyAdditive"} << endl;
-        if result#"isAdditive" then acount = acount + 1;
-        if result#"isUniquelyAdditive" then uacount = uacount + 1;
-        if i%10 == 0 then (
-            print "Just tried polytope number:";
-            print i;
-        );
-    );
-    g << close;
-    print acount;
-    print uacount;
-);
-);
-
 beginDocumentation();
 
 doc ///
@@ -547,5 +523,6 @@ assert(#(listUniquelyAdditiveSmoothFanoToricVarieties 4) == 4);
 assert(#(listUniquelyAdditiveSmoothFanoToricVarieties 5) == 4);
 assert(#(listUniquelyAdditiveSmoothFanoToricVarieties 6) == 8);
 ///
+
 
 end
