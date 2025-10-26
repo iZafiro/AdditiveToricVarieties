@@ -388,7 +388,7 @@ doc ///
         the dimension ({\tt n} = 1, ..., 6)
   Outputs
     :List
-        a list containing hash tables with keys {\tt "databaseIndex"} (the database index in @TO smoothFanoToricVariety@), {\tt "isAdditive"} and {\tt "completeCollection"}
+        a list containing hash tables with keys {\tt "databaseIndex"} (the database index in @TO smoothFanoToricVariety@), {\tt "isUniquelyAdditive"} and {\tt "completeCollection"}
   Description
    Text
      Generates a list of all additive smooth Fano toric varieties of a given dimension. The method fetches the output
@@ -526,3 +526,4 @@ assert(#(listUniquelyAdditiveSmoothFanoToricVarieties 6) == 8);
 
 
 end
+
