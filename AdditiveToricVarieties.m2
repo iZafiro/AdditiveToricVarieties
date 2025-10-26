@@ -345,7 +345,9 @@ doc ///
         {\tt true} if the fan is known to be smooth, {\tt false} if the fan is known not to be smooth
   Outputs
     :HashTable
-        a hash table with keys {\tt "isAdditive"}, {\tt "completeCollection"} and {\tt "isUniquelyAdditive"}
+        a hash table with keys {\tt "isAdditive"} ({\tt true} if the variety is additive, {\tt false} if not),
+        {\tt "completeCollection"} (a list containing a complete collection of Demazure roots if the variety is additive and {\tt getCompleteCollection} is {\tt true}) and
+        {\tt "isUniquelyAdditive"} ({\tt true} if the variety is uniquely additive and {\tt checkIfUniquelyAdditive} is {\tt true}, {\tt false} if not)
   Description
    Text
      Checks if a complete toric variety admits an additive action. If the input is {\tt (n, i)}, the method fetches
@@ -354,14 +356,6 @@ doc ///
      Setting {\tt getCompleteCollection} or {\tt checkIfUniquelyAdditive} to {\tt false},
      or {\tt fanIsComplete} or {\tt fanIsSmooth} to {\tt true}, may dramatically increase performance, especially if the
      variety is high-dimensional.
-
-     The output is a hash table with the following keys and values:
-
-     {\tt "isAdditive"}: {\tt true} if the variety is additive, {\tt false} if not
-
-     {\tt "completeCollection"}: a list containing a complete collection of Demazure roots if the variety is additive and {\tt getCompleteCollection} is {\tt true}
-
-     {\tt "isUniquelyAdditive"}: {\tt true} if the variety is uniquely additive and {\tt checkIfUniquelyAdditive} is {\tt true}, {\tt false} if not
      
      The projective plane is additive but not uniquely additive:
    Example
@@ -526,4 +520,5 @@ assert(#(listUniquelyAdditiveSmoothFanoToricVarieties 6) == 8);
 
 
 end
+
 
